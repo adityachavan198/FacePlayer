@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>Face Player</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+    <style media="screen">
+    * {
+margin: 0;
+podding: 0;
+box-sizing: border-box;
+}
+
+body {
+width: 100vw;
+height: 100vh;
+
+display: grid;
+place-content: center;
+grid-gap: 5px;
+}
+
+input {
+display: none;
+}
+
+label {
+width: 300px;
+height: 200px;
+padding: 15px;
+
+border: 2px dotted #7e57c2;
+border-radius: 5px;
+
+color: #7e57c2;
+
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+gap: 10px;
+
+cursor: pointer;
+}
+
+label:hover {
+background-color: #ede7f6;
+}
+
+ion-icon {
+font-size: 24px;
+}
+
+span {
+max-width: 100%;
+
+font-family: sans-serif;
+font-size: 20px;
+text-align: center;
+text-overflow: ellipsis;
+white-space: nowrap;
+overflow: hidden;
+}
+
+button {
+appearance: none;
+padding: 8px;
+width: 300px;
+background-color: #7e57c2;
+border: none;
+border-radius: 5px;
+
+color: #ede7f6;
+font-family: sans-serif;
+font-size: 16px;
+
+cursor: pointer;
+}
+
+button:hover {
+color: #fff;
+
+}
+    </style>
+  </head>
+  <body>
+
+
+
+<!-- <form action="{% url 'photodetect' %}" method="post" enctype="multipart/form-data">
+  {% csrf_token %}
+<label for="input" id="label">
+  <ion-icon name="cloud-upload-outline"></ion-icon>
+  <span id="span">Upload your photo here</span>
+  <input id="input" type="file" accept="image/*" capture="camera" name="file">
+
+</label>
+<button type="submit"  name="button" >Submit</button>
+</form> -->
+    <form action="{% url 'photodetect' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for=""></label>
+        <input type="file" accept="image/*" capture="camera" class="form-control" name="file" id="" placeholder="">
+        <p class="help-block">Help text here.</p>
+        <button type="submit" name="button">Submit</button>
+      </div>
+    </form> 
+
+
+ <script type="text/javascript">
+ document.getElementById("input").addEventListener("change", (e) => {
+  document.getElementById("span").innerText = e.target.files[0].name;
+});
+ </script>
+ <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-fQybjgWLrvvRgtW6bFlB7jaZrFsaBXjsOMm/tB9LTS58ONXgqbR9W8oWht/amnpF" crossorigin="anonymous"></script>
+  </body>
+</html>

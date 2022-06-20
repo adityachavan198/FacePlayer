@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Face Player</title>
+  </head>
+  <body>
+    <form action="{% url 'photodetect' %}" method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+      <div class="form-group">
+        <label for=""></label>
+        <input type="file" accept="image/*" capture="camera" class="form-control" name="file" id="" placeholder="">
+        <p class="help-block">Help text here.</p>
+        <button type="submit" name="button">Submit</button>
+      </div>
+    </form>
+  </body>
+</html>
